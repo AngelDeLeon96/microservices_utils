@@ -19,4 +19,4 @@ Homepage = "https://github.com/AngelDeLeon96/microservices-utils"
 Repository = "https://github.com/AngelDeLeon96/microservices-utils.git"
 
 [tool.setuptools]
-packages = ["Jwt_utils", "Logger", "Messages", "Response_handler"]
+packages = ["microservices_utils"]
