@@ -1,5 +1,5 @@
 import json
-from .messages import Messages, GeneralMessages
+from ..Messages.messages import Messages, GeneralMessages
 
 
 class ResponseHandler:

@@ -1,6 +1,6 @@
-# Response Handler
+# Microservices Utils
 
-A reusable Python package for standardized API response handling.
+A reusable Python package for utils.
 
 ## Features
 
@@ -8,6 +8,8 @@ A reusable Python package for standardized API response handling.
 - Support for common HTTP status codes
 - Configurable messages
 - Framework-agnostic design (no Flask dependency)
+- Centralized logging with file rotation and permission management
+- Predefined message enums for consistency
 
 ## Installation
 
@@ -44,6 +46,14 @@ response, status = ResponseHandler.not_found("User")
 response, status = ResponseHandler.forbidden()
 ```
 
+```python
+from logger import Logger
+
+# Log messages
+Logger.add_to_log("info", "Service started")
+Logger.add_to_log("error", "An error occurred")
+```
+
 ## API
 
 ### ResponseHandler
@@ -68,6 +78,10 @@ Predefined message enums for consistency:
 - `UserMessages`
 - `AuthMessages`
 - etc.
+
+### Logger
+
+- `add_to_log(level, message)`: Logs a message at the specified level (debug, info, warn, error, critical)
 
 ## License
 
