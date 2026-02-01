@@ -44,13 +44,13 @@ class ResponseHandler:
             tuple: Una tupla con el diccionario de respuesta y el código de estado
         """
         response = {
-            "Success": False,
-            "Message": message,
+            "success": False,
+            "message": message,
             "status_code": status_code,
         }
 
         if error_details is not None:
-            response["ErrorDetails"] = error_details
+            response["error_details"] = error_details
 
         return response
 
