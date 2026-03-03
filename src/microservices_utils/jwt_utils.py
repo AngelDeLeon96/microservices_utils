@@ -49,13 +49,13 @@ class JwtHandler:
     def verify_token(credentials: HTTPAuthorizationCredentials = Depends(security)):
         try:
             payload = jwt.decode(
-                credentials.credentials, SECRET_KEY, algorithms=[ALGORITHM]  # type: ignore
+                credentials.credentials, SECRET_KEY, algorithms=[ALGORITHM], options={"verify_aud": False}  # type: ignore
             )
             username = payload.get("sub")
             role = payload.get("role")
 
             if username is None or role is None:
-                raise HTTPException(status_code=401, detail="Invalid token")
+                raise HTTPException(status_code=404, detail="no user or role")
             return {"username": username, "role": role}
 
         except JWTError:
